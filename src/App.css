@@ -33,6 +33,7 @@ header, footer {
 }
 
 .form-control{
+  font-size: 15px;
   margin: 5px;
   padding: 5px;
 }

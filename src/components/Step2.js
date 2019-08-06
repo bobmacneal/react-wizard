@@ -1,22 +1,22 @@
 import React, {Fragment} from 'react';
 import PropTypes from "prop-types"
 
-const Step2 = ({ handleChange, username, step }) => {
+const Step2 = ({ handleChange, step, text }) => {
   if (step !== 2) {
     return null
   }
   return(
     <Fragment>
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="text2">Text 2:</label>
         <input
           className="form-control"
-          id="username"
-          name="username"
+          id="text2"
+          name="text2"
           onChange={handleChange}
-          placeholder="Enter username"
+          placeholder="Enter text"
           type="text"
-          value={username}
+          value={text}
         />
       </div>
       <div className="formActionBar" />
@@ -26,8 +26,8 @@ const Step2 = ({ handleChange, username, step }) => {
 
 Step2.propTypes = {
   handleChange: PropTypes.func.isRequired,
-  username: PropTypes.string.isRequired,
   step: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default Step2

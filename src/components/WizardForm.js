@@ -8,23 +8,23 @@ const TOTAL_STEPS = 3
 
 const WizardForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [text1, setText1] = useState('');
+  const [text2, setText2] = useState('');
+  const [secret, setSecret] = useState('');
 
   const handleChange = event => {
     const {name, value} = event.target
     switch(name) {
-      case 'email':
-        setEmail(value)
+      case 'text1':
+        setText1(value)
         break;
-      case 'username':
-        setUsername(value)
+      case 'text2':
+        setText2(value)
         break;
-      case 'password':
-        setPassword(value)
+      case 'secret':
+        setSecret(value)
         break;
-      default: // update step
+      default:
         setCurrentStep(value)
     }
   }
@@ -32,9 +32,9 @@ const WizardForm = () => {
   const handleSubmit = event => {
     event.preventDefault()
     alert(`Your registration detail: \n 
-           Email: ${email} \n 
-           Username: ${username} \n
-           Password: ${password}`)
+           Text1: ${text1} \n 
+           Text2: ${text2} \n
+           Secret: ${secret}`)
   }
 
   const handleNextStep = () => {
@@ -54,17 +54,17 @@ const WizardForm = () => {
       <form onSubmit={handleSubmit}>
         <Step1
           handleChange={handleChange}
-          email={email}
+          text={text1}
           step={currentStep}
         />
         <Step2
           handleChange={handleChange}
-          username={username}
+          text={text2}
           step={currentStep}
         />
         <Step3
           handleChange={handleChange}
-          password={password}
+          text={secret}
           step={currentStep}
         />
         <WizardNavigation
