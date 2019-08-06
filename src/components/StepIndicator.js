@@ -6,8 +6,7 @@ const REACT_BLUE = '#61DAFB'
 const BUBBLE_BACKGROUND = '#f2f2f2'
 
 const StepContainer = styled.section`
-  background: #fff;
-  padding: 8px 0;
+  padding-bottom: 20px;
   display: flex;
 `
 const StepIndicatorItem = styled.div`
@@ -64,14 +63,14 @@ const LeftPeg = styled.div`
   width: 20px;
   height: 10px;
 `
-const StepIndicator = ({ navList = [], activeNavIndex }) => {
+const StepIndicator = ({ stepList = [], activeStepIndex }) => {
   const generateNavList = () =>
-    navList.map((navItem, index) => (
+    stepList.map((navItem, index) => (
       <StepIndicatorItem key={index}>
         <StepItemBubble>
-          {index === activeNavIndex && <StepItemActionBubble />}
+          {index === activeStepIndex && <StepItemActionBubble />}
           {index !== 0 && <LeftPeg />}
-          {index !== navList.length - 1 && <RightPeg />}
+          {index !== stepList.length - 1 && <RightPeg />}
           <StepNumber>{index + 1}</StepNumber>
         </StepItemBubble>
         <StepTitle variant="body1">{navItem}</StepTitle>

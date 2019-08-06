@@ -1,35 +1,33 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types'
 
-const Step4 = ({ handleChange, step, text }) => {
-  if (step !== 4) {
+const Task = ({ handleChange, step, text }) => {
+  if (step !== 3) {
     return null
   }
   return(
     <Fragment>
       <div>
-        <label htmlFor="secret">Secret:</label>
+        <label htmlFor="taskName">Task:</label>
         <input
           className="form-control"
-          id="secret"
-          name="secret"
+          id="taskName"
+          name="taskName"
           onChange={handleChange}
-          placeholder="Enter secret"
-          type="password"
+          placeholder="Task name"
+          type="text"
           value={text}
         />
       </div>
-      <div className="formActionBar">
-        <button className="buttonSave">Save</button>
-      </div>
+      <div className="formActionBar" />
     </Fragment>
   );
 }
 
-Step4.propTypes = {
+Task.propTypes = {
   handleChange: PropTypes.func.isRequired,
   step: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
 };
 
-export default Step4
+export default Task

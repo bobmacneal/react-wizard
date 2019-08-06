@@ -1,20 +1,20 @@
 import React, {Fragment} from 'react';
 import PropTypes from "prop-types"
 
-const Step2 = ({ handleChange, step, text }) => {
+const Destination = ({ handleChange, step, text }) => {
   if (step !== 2) {
     return null
   }
   return(
     <Fragment>
       <div>
-        <label htmlFor="text2">Text 2:</label>
+        <label htmlFor="destination">Destination:</label>
         <input
           className="form-control"
-          id="text2"
-          name="text2"
+          id="destination"
+          name="destination"
           onChange={handleChange}
-          placeholder="Enter text"
+          placeholder="Destination path"
           type="text"
           value={text}
         />
@@ -24,10 +24,10 @@ const Step2 = ({ handleChange, step, text }) => {
   );
 }
 
-Step2.propTypes = {
+Destination.propTypes = {
   handleChange: PropTypes.func.isRequired,
   step: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
 };
 
-export default Step2
+export default Destination

@@ -1,34 +1,34 @@
 import React, {Fragment, useState} from 'react';
 import WizardNavigation from './WizardNavigation'
-import Step1 from './Step1'
-import Step2 from './Step2'
-import Step3 from './Step3'
-import Step4 from './Step4'
+import Source from './Source'
+import Destination from './Destination'
+import Task from './Task'
+import Schedule from './Schedule'
 import StepIndicator from "./StepIndicator"
 
 const TOTAL_STEPS = 4
 
 const WizardForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [text1, setText1] = useState('');
-  const [text2, setText2] = useState('');
-  const [text3, setText3] = useState('');
-  const [secret, setSecret] = useState('');
+  const [source, setSource] = useState('');
+  const [destination, setDestination] = useState('');
+  const [taskName, setTaskName] = useState('');
+  const [schedule, setSchedule] = useState('');
 
   const handleChange = event => {
     const {name, value} = event.target
     switch(name) {
-      case 'text1':
-        setText1(value)
+      case 'source':
+        setSource(value)
         break;
-      case 'text2':
-        setText2(value)
+      case 'destination':
+        setDestination(value)
         break;
-      case 'text3':
-        setText3(value)
+      case 'taskName':
+        setTaskName(value)
         break;
-      case 'secret':
-        setSecret(value)
+      case 'schedule':
+        setSchedule(value)
         break;
       default:
         setCurrentStep(value)
@@ -37,15 +37,15 @@ const WizardForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    alert(`Your registration detail: \n 
-           Text1: ${text1} \n 
-           Text2: ${text2} \n
-           Text3: ${text3} \n
-           Secret: ${secret}`)
+    alert(`POST to server: \n 
+           Source: ${source} \n 
+           Destination: ${destination} \n
+           Name: ${taskName} \n
+           Time: ${schedule}`)
   }
 
   const handleNextStep = () => {
-    const newStep = currentStep >= TOTAL_STEPS -1 ? TOTAL_STEPS: currentStep + 1
+    const newStep = currentStep >= TOTAL_STEPS - 1 ? TOTAL_STEPS: currentStep + 1
     setCurrentStep(newStep)
   }
 
@@ -57,31 +57,29 @@ const WizardForm = () => {
   return (
     <Fragment>
       <h1>Wizard</h1>
-      <p>Step #{currentStep}</p>
       <StepIndicator
-        navList={['Source', 'Destination!', 'Data Set', 'Schedule']}
-        activeNavIndex={currentStep - 1}
+        stepList={['Source', 'Destination', 'Task', 'Schedule']}
+        activeStepIndex={currentStep - 1}
       />
-
       <form onSubmit={handleSubmit}>
-        <Step1
+        <Source
           handleChange={handleChange}
-          text={text1}
+          text={source}
           step={currentStep}
         />
-        <Step2
+        <Destination
           handleChange={handleChange}
-          text={text2}
+          text={destination}
           step={currentStep}
         />
-        <Step3
+        <Task
           handleChange={handleChange}
-          text={text3}
+          text={taskName}
           step={currentStep}
         />
-        <Step4
+        <Schedule
           handleChange={handleChange}
-          text={secret}
+          text={schedule}
           step={currentStep}
         />
         <WizardNavigation

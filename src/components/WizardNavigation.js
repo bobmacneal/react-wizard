@@ -2,8 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 const WizardNavigation = ({onNextStep, onPreviousStep, step, totalSteps}) => {
-  const renderPreviousButton = () =>{
-    if(step !== 1){
+  const renderPreviousButton = () => {
+    if (step === 1) {
+      return (
+        <button
+          children="Previous"
+          className="buttonStepDisabled"
+          disabled
+          type="button"
+        />
+      )
+
+    }
+    else if(step !== 1){
       return (
         <button
           children="Previous"
@@ -12,8 +23,7 @@ const WizardNavigation = ({onNextStep, onPreviousStep, step, totalSteps}) => {
           onClick={() => onPreviousStep()}
         />
       )
-    }
-    return null;
+    } else {return null}
   }
 
   const renderNextButton = () =>{
@@ -26,15 +36,23 @@ const WizardNavigation = ({onNextStep, onPreviousStep, step, totalSteps}) => {
           onClick={() => onNextStep()}
         />
       )
-    }
-    return null;
+    } else if (step === totalSteps) {
+      return (
+        <button
+          children="Next"
+          className="buttonStepDisabled"
+          disabled
+          type="button"
+        />
+      )
+    } else {return null}
   }
 
   return (
-    <div className="flex-grid-thirds">
+    <div className="navigationPanel">
       <div className="col">{renderPreviousButton()}</div>
       <div className="col" />
-      <div className="col">{renderNextButton()}</div>
+      <div className="col" style={{textAlign: 'right'}}>{renderNextButton()}</div>
     </div>
   )
 }

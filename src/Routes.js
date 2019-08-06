@@ -2,15 +2,15 @@ import React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 import RouteWithLayout from './RouteWithLayout';
 import Layout from './Layout'
-import HomeView from './HomeView'
-import NotFoundView from './NotFoundView'
+import Home from './Home'
+import NotFound from './NotFound'
 import WizardForm from './components/WizardForm'
 
 const Routes = () => {
   return (
     <Switch>
       <RouteWithLayout
-        component={HomeView}
+        component={Home}
         exact
         layout={Layout}
         path="/"
@@ -19,10 +19,10 @@ const Routes = () => {
         component={WizardForm}
         layout={Layout}
         exact
-        path='/action-builder'
+        path='/wizard'
       />
       <RouteWithLayout
-        component={NotFoundView}
+        component={NotFound}
         layout={Layout}
         exact
         path='/not-found'
