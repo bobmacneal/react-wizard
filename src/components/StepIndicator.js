@@ -2,20 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 import propTypes from 'prop-types'
 
-const Wrapper = styled.section`
+const REACT_BLUE = '#61DAFB'
+const BUBBLE_BACKGROUND = '#f2f2f2'
+
+const StepContainer = styled.section`
   background: #fff;
   padding: 8px 0;
   display: flex;
-  justify-content: center;
 `
-const NavContainer = styled.div`
+const StepIndicatorItem = styled.div`
   width: 100px;
-  color: red;
 `
-const NavBubbleWrapper = styled.div`
+const StepItemBubble = styled.div`
   width: 80px;
   height: 70px;
-  background: #f2f2f2;
+  background-color: ${BUBBLE_BACKGROUND};
   border-radius: 50%;
   color: #fff;
   margin: 0 auto;
@@ -24,16 +25,16 @@ const NavBubbleWrapper = styled.div`
   padding-top: 10px;
   position: relative;
 `
-const NavActiveBubble = styled.div`
+const StepItemActionBubble = styled.div`
   width: 60px;
   height: 60px;
-  background-color: #ce3e48;
+  background-color: ${REACT_BLUE};
   position: absolute;
   top: 10px;
   left: 10px;
   border-radius: 50%;
 `
-const SNumber = styled.div`
+const StepNumber = styled.div`
   && {
     color: #fff;
     font-size: 40px;
@@ -42,12 +43,13 @@ const SNumber = styled.div`
     z-index: 1;
   }
 `
-const STitle = styled.div`
-  color: #ce3e48;
+const StepTitle = styled.div`
+  color: ${REACT_BLUE};
+  font-weight: bold;
   text-align: center;
 `
 const RightPeg = styled.div`
-  background: #f2f2f2;
+  background-color: ${BUBBLE_BACKGROUND};
   position: absolute;
   top: 35px;
   left: 70px;
@@ -55,7 +57,7 @@ const RightPeg = styled.div`
   height: 10px;
 `
 const LeftPeg = styled.div`
-  background: #f2f2f2;
+  background-color: ${BUBBLE_BACKGROUND};
   position: absolute;
   top: 35px;
   left: -10px;
@@ -65,18 +67,18 @@ const LeftPeg = styled.div`
 const StepIndicator = ({ navList = [], activeNavIndex }) => {
   const generateNavList = () =>
     navList.map((navItem, index) => (
-      <NavContainer key={index}>
-        <NavBubbleWrapper>
-          {index === activeNavIndex && <NavActiveBubble />}
+      <StepIndicatorItem key={index}>
+        <StepItemBubble>
+          {index === activeNavIndex && <StepItemActionBubble />}
           {index !== 0 && <LeftPeg />}
           {index !== navList.length - 1 && <RightPeg />}
-          <SNumber>{index + 1}</SNumber>
-        </NavBubbleWrapper>
-        <STitle variant="body1">{navItem}</STitle>
-      </NavContainer>
+          <StepNumber>{index + 1}</StepNumber>
+        </StepItemBubble>
+        <StepTitle variant="body1">{navItem}</StepTitle>
+      </StepIndicatorItem>
     ))
 
-  return <Wrapper>{generateNavList()}</Wrapper>
+  return <StepContainer>{generateNavList()}</StepContainer>
 }
 
 StepIndicator.propTypes = {
