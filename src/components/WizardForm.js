@@ -50,7 +50,7 @@ const WizardForm = () => {
   return (
     <Fragment>
       <h1>Wizard</h1>
-      <p># {currentStep}</p>
+      <p>Step #{currentStep}</p>
       <form onSubmit={handleSubmit}>
         <Step1
           handleChange={handleChange}
