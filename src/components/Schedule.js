@@ -8,7 +8,7 @@ const Schedule = ({ handleChange, step, text }) => {
   return(
     <Fragment>
       <div>
-        <label htmlFor="schedule">Time:</label>
+        <label htmlFor="schedule">Schedule:</label>
         <input
           className="form-control"
           id="schedule"
