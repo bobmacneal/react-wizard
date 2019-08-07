@@ -42,6 +42,6 @@ comes from.
     `yarn add styled-components` 
     
 - [babel-plugin-styled-components](https://www.npmjs.com/package/babel-plugin-styled-components) so Babel knows
-how to transpile css in style-components. 
+how to transpile css in styled-components. 
 
     `yarn add babel-plugin-styled-components` 
