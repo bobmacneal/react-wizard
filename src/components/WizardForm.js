@@ -64,23 +64,27 @@ const WizardForm = () => {
       <form onSubmit={handleSubmit}>
         <Source
           handleChange={handleChange}
-          text={source}
           step={currentStep}
+          stepOrder={1}
+          text={source}
         />
         <Destination
           handleChange={handleChange}
-          text={destination}
           step={currentStep}
+          stepOrder={2}
+          text={destination}
         />
         <Task
           handleChange={handleChange}
-          text={taskName}
           step={currentStep}
+          stepOrder={3}
+          text={taskName}
         />
         <Schedule
           handleChange={handleChange}
-          text={schedule}
           step={currentStep}
+          stepOrder={4}
+          text={schedule}
         />
         <WizardNavigation
           onNextStep={handleNextStep}

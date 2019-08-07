@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
 import PropTypes from "prop-types"
 
-const Source = ({ handleChange, step, text }) => {
-  if (step !== 1) {
+const Source = ({ handleChange, step, stepOrder, text }) => {
+  if (step !== stepOrder) {
     return null
   }
   return(
@@ -10,7 +10,7 @@ const Source = ({ handleChange, step, text }) => {
       <div>
         <label htmlFor="source">Source:</label>
         <input
-          className="form-control"
+          className="formControl"
           id="source"
           name="source"
           onChange={handleChange}
@@ -19,7 +19,7 @@ const Source = ({ handleChange, step, text }) => {
           value={text}
         />
       </div>
-      <div className="formActionBar" />
+      <div className="formActionPanel" />
     </Fragment>
   );
 }
@@ -27,6 +27,7 @@ const Source = ({ handleChange, step, text }) => {
 Source.propTypes = {
   handleChange: PropTypes.func.isRequired,
   step: PropTypes.number.isRequired,
+  stepOrder: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
 };
 
