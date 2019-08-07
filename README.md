@@ -5,12 +5,7 @@ This is an example template for implementing a step-by-step _wizard_. It is writ
 It demonstrates a simple pattern for setting up a wizard using React's useState hook.
 ___
 
-<img src="./public/Screenshot.png" width="40%">.
-
-
-
-
-![Wizard](https://github.com/bobmacneal/react-wizard/blob/master/public/Screenshot.png)
+<img src="./public/Screenshot.png" width="60%">.
 ___
  
 ### Setup
