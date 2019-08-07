@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 import RouteWithLayout from './RouteWithLayout';
-import Layout from './Layout'
+import Layout from './components/Layout'
 import Home from './Home'
 import NotFound from './NotFound'
 import WizardForm from './components/WizardForm'
