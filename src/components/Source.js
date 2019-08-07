@@ -2,10 +2,10 @@ import React, {Fragment, useEffect, useRef} from 'react';
 import PropTypes from "prop-types"
 
 const Source = ({ handleChange, step, stepOrder, text }) => {
-  const textInput = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
-    textInput.current.focus();
+    textRef.current.focus();
   }, []);
 
   if (step !== stepOrder) {
@@ -21,7 +21,7 @@ const Source = ({ handleChange, step, stepOrder, text }) => {
           name="source"
           onChange={handleChange}
           placeholder="Source path"
-          ref={textInput}
+          ref={textRef}
           type="text"
           value={text}
         />

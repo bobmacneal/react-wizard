@@ -1,13 +1,7 @@
-import React, {Fragment, useEffect, useRef} from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types'
 
 const Task = ({ handleChange, step, stepOrder, text }) => {
-  const textInput = useRef(null);
-
-  useEffect(() => {
-    textInput.current.focus();
-  }, []);
-
   if (step !== stepOrder) {
     return null
   }
@@ -21,7 +15,6 @@ const Task = ({ handleChange, step, stepOrder, text }) => {
           name="taskName"
           onChange={handleChange}
           placeholder="Task name"
-          ref={textInput}
           type="text"
           value={text}
         />
