@@ -1,23 +1,27 @@
+$react-blue: #61DAFB;
+$success-green: #4CAF50;
+$disabled-color: #f2f2f2;
+
 .container{
+  align-items: center;
+  background-color: white;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: white;
-  align-items: center;
 }
 
 header, footer, .content{
-  padding-top: 10px;
-  margin: auto;
   border-bottom: 1px solid whitesmoke;
+  margin: auto;
+  padding-top: 10px;
   width:100%;
 }
 
 header .section,footer .section, .content .section{
-  height:100%;
-  width:99%;
-  margin:auto;
   background-color:inherit;
+  height:100%;
+  margin:auto;
+  width:99%;
 }
 
 header, footer {
@@ -55,7 +59,7 @@ button:focus {outline:0;};
 
 .buttonSave {
   @extend %buttonShared;
-  background-color: #4CAF50;
+  background-color: $success-green;
   cursor: pointer;
   margin-top: 10px;
   padding: 10px;
@@ -64,7 +68,7 @@ button:focus {outline:0;};
 
 .buttonStep {
   @extend %buttonShared;
-  background-color: #61DAFB; /* React Blue */
+  background-color: $react-blue;
   cursor: pointer;
   margin-right: 10px;
   margin-top: 10px;
@@ -74,7 +78,7 @@ button:focus {outline:0;};
 
 .buttonStepDisabled {
   @extend %buttonShared;
-  background-color: #f2f2f2;
+  background-color: $disabled-color;
   margin-right: 10px;
   margin-top: 10px;
   padding: 10px;
