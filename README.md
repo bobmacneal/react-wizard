@@ -1,8 +1,9 @@
 
 # react-wizard 
 
-This is an example template for implementing a step-by-step _wizard_. It is written in [React](https://reactjs.org/). 
-It demonstrates a simple pattern for setting up a wizard using React's useState hook.
+This is an example for implementing a step-by-step _wizard_ using [React](https://reactjs.org/). 
+
+I demonstrate an easy-to-understand template for setting up a wizard using React's useState hook.
 
 
 <img src="./public/Screenshot.png" width="50%">.
