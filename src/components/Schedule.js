@@ -1,7 +1,13 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect, useRef} from 'react';
 import PropTypes from 'prop-types'
 
 const Schedule = ({ handleChange, step, stepOrder, text }) => {
+  const textInput = useRef(null);
+
+  useEffect(() => {
+    textInput.current.focus();
+  }, []);
+
   if (step !== stepOrder) {
     return null
   }
@@ -15,6 +21,7 @@ const Schedule = ({ handleChange, step, stepOrder, text }) => {
           name="schedule"
           onChange={handleChange}
           placeholder="Enter time"
+          ref={textInput}
           type="text"
           value={text}
         />
