@@ -22,4 +22,26 @@ ___
 `$ yarn start`
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Additional Info
+
+Beyond bootstrapping react-wizard with [Create React App](https://github.com/facebook/create-react-app), 
+I added the following npm packages:
+
+- [node-sass](https://www.npmjs.com/package/node-sass) for styling ease.
+
+    `yarn add node-sass` 
+
+- [prop-types](https://www.npmjs.com/package/prop-types) for runtime type checking. 
+
+    `yarn add prop-types` 
+
+
+- [styled-components](https://www.npmjs.com/package/styled-components) to make it obvious where a component's styling 
+comes from. 
+
+    `yarn add styled-components` 
+    
+- [babel-plugin-styled-components](https://www.npmjs.com/package/babel-plugin-styled-components) so Babel knows
+how to transpile css in style-components. 
+
+    `yarn add babel-plugin-styled-components` 
