@@ -3,9 +3,9 @@
 
 This is an example template for implementing a step-by-step _wizard_. It is written in [React](https://reactjs.org/). 
 It demonstrates a simple pattern for setting up a wizard using React's useState hook.
-___
 
-<img src="./public/Screenshot.png" width="60%">.
+
+<img src="./public/Screenshot.png" width="50%">.
 ___
  
 ### Setup
