@@ -58,8 +58,8 @@ const WizardForm = () => {
     <Fragment>
       <h1>Wizard</h1>
       <StepIndicator
-        stepList={['Source', 'Destination', 'Task', 'Schedule']}
-        activeStepIndex={currentStep - 1}
+        stepItems={['Source', 'Destination', 'Task', 'Schedule']}
+        activeStep={currentStep - 1}
       />
       <form onSubmit={handleSubmit}>
         <Source

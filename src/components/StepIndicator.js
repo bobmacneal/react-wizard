@@ -5,84 +5,88 @@ import propTypes from 'prop-types'
 const REACT_BLUE = '#61DAFB'
 const BUBBLE_BACKGROUND = '#f2f2f2'
 
-const StepContainer = styled.section`
-  padding-bottom: 20px;
+const Container = styled.section`
   display: flex;
+  padding-bottom: 20px;
 `
-const StepIndicatorItem = styled.div`
+const StepItem = styled.div`
   width: 100px;
 `
-const StepItemBubble = styled.div`
-  width: 80px;
-  height: 70px;
+const ItemBackground = styled.div`
   background-color: ${BUBBLE_BACKGROUND};
   border-radius: 50%;
   color: #fff;
-  margin: 0 auto;
   display: flex;
+  height: 70px;
   justify-content: center;
+  margin: 0 auto;
   padding-top: 10px;
   position: relative;
+  width: 80px;
 `
-const StepItemActionBubble = styled.div`
-  width: 60px;
-  height: 60px;
+const ItemBalloon = styled.div`
   background-color: ${REACT_BLUE};
+  border-radius: 50%;
+  height: 60px;
+  left: 10px;
   position: absolute;
   top: 10px;
-  left: 10px;
-  border-radius: 50%;
+  width: 60px;
 `
 const StepNumber = styled.div`
   && {
     color: #fff;
     font-size: 40px;
-    position: relative;
     margin-top: 5px;
+    position: relative;
     z-index: 1;
   }
 `
 const StepTitle = styled.div`
   color: ${REACT_BLUE};
-  font-weight: bold;
   text-align: center;
+  font-weight: bold;
 `
-const RightPeg = styled.div`
+const RightArm = styled.div`
   background-color: ${BUBBLE_BACKGROUND};
-  position: absolute;
-  top: 35px;
+  height: 10px;
   left: 70px;
-  width: 20px;
-  height: 10px;
-`
-const LeftPeg = styled.div`
-  background-color: ${BUBBLE_BACKGROUND};
   position: absolute;
   top: 35px;
-  left: -10px;
   width: 20px;
-  height: 10px;
 `
-const StepIndicator = ({ stepList = [], activeStepIndex }) => {
+const LeftArm = styled.div`
+  background-color: ${BUBBLE_BACKGROUND};
+  height: 10px;
+  left: -10px;
+  position: absolute;
+  top: 35px;
+  width: 20px;
+`
+const StepIndicator = ({ stepItems = [], activeStep }) => {
   const generateNavList = () =>
-    stepList.map((navItem, index) => (
-      <StepIndicatorItem key={index}>
-        <StepItemBubble>
-          {index === activeStepIndex && <StepItemActionBubble />}
-          {index !== 0 && <LeftPeg />}
-          {index !== stepList.length - 1 && <RightPeg />}
+    stepItems.map((stepTitle, index) => (
+      <StepItem key={index}>
+        <ItemBackground>
+          {index === activeStep && <ItemBalloon />}
+          {index !== 0 && <LeftArm />}
+          {index !== stepItems.length - 1 && <RightArm />}
           <StepNumber>{index + 1}</StepNumber>
-        </StepItemBubble>
-        <StepTitle variant="body1">{navItem}</StepTitle>
-      </StepIndicatorItem>
+        </ItemBackground>
+        <StepTitle variant="body1">{stepTitle}</StepTitle>
+      </StepItem>
     ))
 
-  return <StepContainer>{generateNavList()}</StepContainer>
+  return (
+    <Container>
+      {generateNavList()}
+    </Container>
+  )
 }
 
 StepIndicator.propTypes = {
-  navList: propTypes.array,
-  activeNavIndex: propTypes.number,
+  stepItems: propTypes.array,
+  activeStep: propTypes.number,
 }
 
 export default StepIndicator
