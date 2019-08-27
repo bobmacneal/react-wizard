@@ -38,14 +38,14 @@ const WizardProvider = (props) => {
         input: [
           {
             display: 'Task Name',
-            name: 'name',
+            name: 'taskName',
             placeholder: 'Enter task name',
             type: 'text',
             value: '',
           },
           {
             display: 'Active',
-            name: 'active',
+            name: 'activeTask',
             type: 'checkbox',
             value: true,
           },
@@ -59,11 +59,10 @@ const WizardProvider = (props) => {
             display: 'Occurs',
             name: 'occurrence',
             options: [
-              {id: '', text: 'Choose one'},
-              {id: '1', text: 'Daily'},
-              {id: '2', text: 'Hourly'},
-              {id: '3', text: 'Monthly'},
-              {id: '4', text: 'Every minute'}
+              {id: 'DEFAULT', text: 'Choose one'},
+              {id: 'Daily', text: 'Daily'},
+              {id: 'Hourly', text: 'Hourly'},
+              {id: 'Monthly', text: 'Monthly'},
               ],
             type: 'select',
             value: '',
