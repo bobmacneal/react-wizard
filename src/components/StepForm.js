@@ -6,15 +6,38 @@ import styled from 'styled-components'
 import {WizardContext} from "./WizardContext";
 
 const Section = styled.section`
-  height: 160px;
-  width: 100%;
+  height: 210px;
+  width: 340px;
   padding-left: 15px;
+  padding-right: 15px;
   padding-top: 15px;
+`
+const ActionPanel = styled.div`
+  text-align: right;
+  width: 310px;
 `
 const StepForm = () => {
   const [state, setState] = useContext(WizardContext)
   const {activeStep, steps} = state
   const inputItems = steps[activeStep - 1].input
+  const totalSteps = steps.length || 0
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    let postBody = []
+
+    steps.forEach( (step) => {
+      const payload = {id: step.id, input: []}
+      step.input.forEach((item) => {
+        payload.input.push({
+          name: item.name,
+          value: item.value
+        })
+      })
+      postBody.push(payload)
+    });
+    console.log(JSON.stringify(postBody))
+  }
 
   const handleChange = event => {
     const {name, value} = event.target
@@ -63,6 +86,18 @@ const StepForm = () => {
             </div>
           )})
       }
+      <ActionPanel>
+        {
+          activeStep === totalSteps &&
+          <form onSubmit={handleSubmit}>
+            <button
+              children="Save"
+              className="buttonSave"
+              type="submit"
+            />
+          </form>
+        }
+      </ActionPanel>
     </Section>
   );
 }
