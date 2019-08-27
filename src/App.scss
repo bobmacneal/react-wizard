@@ -1,9 +1,7 @@
 $react-blue: #61DAFB;
 $success-green: #4CAF50;
-$disabled-color: #f2f2f2;
 
 .container{
-  align-items: center;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -30,7 +28,7 @@ header, footer {
 
 .content{
   flex: 1;
-  margin-left: 15px;
+  margin-left: 12px;
 }
 
 .logo {
@@ -39,20 +37,13 @@ header, footer {
 
 button:focus {outline:0;};
 
-
-.formControl{
-  font-size: 15px;
-  margin: 5px;
-  padding: 5px;
-}
-
 %buttonShared {
   border: none;
   border-radius: 4px;
   color: white;
   display: inline-block;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 800;
   text-align: center;
   text-decoration: none;
 }
@@ -78,28 +69,32 @@ button:focus {outline:0;};
 
 .buttonStepDisabled {
   @extend %buttonShared;
-  background-color: $disabled-color;
+  background-color: $react-blue;
+  cursor: auto;
   margin-right: 10px;
   margin-top: 10px;
+  opacity: 0.4;
   padding: 10px;
   width: 100px;
 }
 
-.navigationPanel {
-  border-top: solid 1px whitesmoke;
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
-}
-
-.navigationPanel .col {
-  width: 32%;
-}
-
-.formActionPanel{
-  height: 50px;
-  padding-bottom: 20px;
-  padding-top: 10px;
-  text-align: right;
-  width: 255px;
-}
+//.navigationPanel {
+//  border-top: solid 1px whitesmoke;
+//  display: flex;
+//  justify-content: space-between;
+//  width: 30%;
+//}
+//
+//.navigationPanel .col {
+//  width: 32%;
+//}
+//
+//.formActionPanel{
+//  border: dashed 1px brown;
+//  height: 50px;
+//  padding-bottom: 20px;
+//  padding-top: 10px;
+//  text-align: right;
+//  width: 255px;
+//}
+//

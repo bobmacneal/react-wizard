@@ -1,6 +1,6 @@
-import React from 'react';
 import '../App.scss';
 import logo from '../logo.svg'
+import React from 'react'
 
 const Layout = ({children}) => {
   return (
