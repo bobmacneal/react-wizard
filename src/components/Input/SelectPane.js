@@ -36,20 +36,14 @@ const SelectPane = ({item, onChange}) => {
           id={name}
           name={name}
           onChange={onChange}
+          value={value || 'DEFAULT'}
         >
           {
             options.map((option) => {
                 const {id, text} = option
-                if (value === id) {
-                  return (
-                    <option selected value={id}>{text}</option>
-                  )
-
-                } else {
-                  return (
-                    <option value={id}>{text}</option>
-                  )
-                }
+                return (
+                  <option key={id} value={id}>{text}</option>
+                )
               }
             )
           }
