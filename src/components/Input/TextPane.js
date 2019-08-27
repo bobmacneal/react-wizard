@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 
 const Section = styled.section`
@@ -24,8 +24,7 @@ const Input = styled.input`
   padding: 5px;
   text-align: left;
   width: 300px;
-`;
-
+`
 const TextPane = ({item, onChange}) => {
   return(
     <Section>

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components'
-import { WizardContext } from "./WizardContext";
+import {WizardContext} from "./WizardContext";
 
 const REACT_BLUE = '#61DAFB'
 const BUBBLE_BACKGROUND = '#f2f2f2'

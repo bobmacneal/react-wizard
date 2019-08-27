@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 
 const Section = styled.section`
@@ -23,10 +23,9 @@ const Select = styled.select`
   padding: 5px;
   text-align: left;
   width: 300px;
-`;
-
+`
 const SelectPane = ({item, onChange}) => {
-  const {display, name, options} = item
+  const {display, name, options, value} = item
   return(
     <Section>
       <Label>
@@ -40,10 +39,19 @@ const SelectPane = ({item, onChange}) => {
         >
           {
             options.map((option) => {
-              const {text, value} = option
-              return (
-                <option value={value}>{text}</option>
-              )})
+                const {id, text} = option
+                if (value === id) {
+                  return (
+                    <option selected value={id}>{text}</option>
+                  )
+
+                } else {
+                  return (
+                    <option value={id}>{text}</option>
+                  )
+                }
+              }
+            )
           }
         </Select>
       </div>

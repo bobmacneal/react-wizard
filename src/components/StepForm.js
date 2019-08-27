@@ -1,10 +1,16 @@
-import React, {useContext} from 'react';
-import { WizardContext } from "./WizardContext";
-import TextPane from "./Input/TextPane"
+import React, {useContext} from 'react'
 import CheckPane from "./Input/CheckPane"
 import SelectPane from "./Input/SelectPane"
+import TextPane from "./Input/TextPane"
 import styled from 'styled-components'
+import {WizardContext} from "./WizardContext";
 
+const Section = styled.section`
+  height: 160px;
+  width: 100%;
+  padding-left: 15px;
+  padding-top: 15px;
+`
 const StepForm = () => {
   const [state, setState] = useContext(WizardContext)
   const {activeStep, steps} = state
@@ -12,22 +18,13 @@ const StepForm = () => {
 
   const handleChange = event => {
     const {name, value} = event.target
-    // switch(name) {
-    //   case 'source':
-    //     setSource(value)
-    //     break;
-    //   case 'destination':
-    //     setDestination(value)
-    //     break;
-    //   case 'taskName':
-    //     setTaskName(value)
-    //     break;
-    //   case 'schedule':
-    //     setSchedule(value)
-    //     break;
-    //   default:
-    //     // setState(value)
-    // }
+    const stepsToUpdate = [...steps];
+    const step = stepsToUpdate[activeStep - 1]
+    const inputItem = step.input[step.input.findIndex(item => item.name === name)]
+    inputItem.value = inputItem.type === 'checkbox' ?  value !== 'true' : value
+    setState(prevState => {
+      return { ...prevState, steps: stepsToUpdate }
+    })
   }
 
   const renderFormControl = item => {
@@ -36,37 +33,37 @@ const StepForm = () => {
         return (
           <CheckPane
             item={item}
-            onChange={() => handleChange()}
+            onChange={handleChange}
           />
         )
       case 'select':
         return (
           <SelectPane
             item={item}
-            onChange={() => handleChange()}
+            onChange={handleChange}
           />
         )
       default:
         return (
           <TextPane
             item={item}
-            onChange={() => handleChange()}
+            onChange={handleChange}
           />
         )
     }
   }
 
   return(
-    <div style={{height: '160px', width: '100%', paddingLeft: '15px', paddingTop: '15px'}}>
+    <Section>
       {
-        inputItems.map((item) => {
+        inputItems.map((item, index) => {
           return (
-            <div>
+            <div key={index}>
               {renderFormControl(item)}
             </div>
           )})
       }
-    </div>
+    </Section>
   );
 }
 

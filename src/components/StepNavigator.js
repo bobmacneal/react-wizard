@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components'
-import { WizardContext } from "./WizardContext";
+import {WizardContext} from "./WizardContext";
 
 const Section = styled.section`
   border-top: solid 1px whitesmoke;

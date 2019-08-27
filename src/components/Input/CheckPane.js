@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 
 const Section = styled.section`
@@ -19,15 +19,14 @@ const Input = styled.input`
   border: solid 1px #dbdbdb;
   border-radius: 3px;
   color: #262626;
-  cursor: text;
+  cursor: pointer;
   font-size: 14px;
   font-weight: 300;
   height: 30px;
   padding: 5px;
   text-align: left;
   width: 300px;
-`;
-
+`
 const CheckPane = ({item, onChange}) => {
   return(
     <Section>
@@ -40,7 +39,7 @@ const CheckPane = ({item, onChange}) => {
           name={item.name}
           onChange={onChange}
           type="checkbox"
-          checked={item.value}
+          checked={item.value === true}
           value={item.value}
         />
       </div>

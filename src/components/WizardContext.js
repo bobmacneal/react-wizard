@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 const WizardContext = React.createContext([{}, () => {}])
 
@@ -59,10 +59,11 @@ const WizardProvider = (props) => {
             display: 'Occurs',
             name: 'occurrence',
             options: [
-              {value: 1, text: 'Daily'},
-              {value: 2, text: 'Hourly'},
-              {value: 3, text: 'Monthly'},
-              {value: 4, text: 'Every minute'}
+              {id: '', text: 'Choose one'},
+              {id: '1', text: 'Daily'},
+              {id: '2', text: 'Hourly'},
+              {id: '3', text: 'Monthly'},
+              {id: '4', text: 'Every minute'}
               ],
             type: 'select',
             value: '',

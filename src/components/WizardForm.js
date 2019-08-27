@@ -1,9 +1,13 @@
-import React from 'react';
-import StepNavigator from './StepNavigator'
-import StepIndicator from "./StepIndicator"
-import { WizardProvider } from "./WizardContext";
+import React from 'react'
 import StepForm from "./StepForm"
+import StepIndicator from "./StepIndicator"
+import StepNavigator from './StepNavigator'
+import styled from 'styled-components'
+import {WizardProvider} from "./WizardContext";
 
+const H2 = styled.h2`
+  margin-left: 10px;
+`
 const WizardForm = () => {
   const handleSubmit = event => {
     event.preventDefault()
@@ -16,7 +20,7 @@ const WizardForm = () => {
 
   return (
     <WizardProvider>
-      <h2>Context Wizard</h2>
+      <H2>Wizard</H2>
       <StepIndicator/>
       <form onSubmit={handleSubmit}>
         <StepForm />
