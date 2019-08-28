@@ -8,8 +8,8 @@ share a user's input form data, i.e., application "state", across components.
 All form input whether requiring text input, a checkbox, or a select is auto-generated from the
 initial state of the context WizardContext.js.
 
-<img src="./public/Screenshot.png" width="50%">.
 ___
+<img src="./public/Screenshot.png" width="50%">.
  
 ### Setup
 
