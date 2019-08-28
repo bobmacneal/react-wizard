@@ -6,7 +6,7 @@ using the [useContext hook](https://reactjs.org/docs/hooks-reference.html#usecon
 share a user's input form data, i.e., application "state", across components.
 
 All form input, whether calling for text input, a checkbox, or a select, is auto-generated from the
-initial state of the context WizardContext.js.
+initial state of the context in _WizardContext.js_.
 
 ___
 <img src="./public/Screenshot.png" width="50%">.
