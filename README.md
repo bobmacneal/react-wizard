@@ -3,7 +3,7 @@
 
 **react-wizard** is a step-by-step _wizard_ workflow written in JavaScript with [React](https://reactjs.org/).
 It demonstrates an implementation of the [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) hook to 
-share a user's form input, i.e., the application's "state", across components.
+share a user's form input (application's "state") across components.
 
 The step-by-step workflow is applied to a hypothetical task scheduling feature.
 
