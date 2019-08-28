@@ -10,6 +10,7 @@ initial state of the context WizardContext.js.
 
 ___
 <img src="./public/Screenshot.png" width="50%">.
+___
  
 ### Setup
 
