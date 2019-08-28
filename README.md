@@ -3,7 +3,10 @@
 
 This is a step-by-step _wizard_ application using [React](https://reactjs.org/) that demonstrates 
 using React's [useContext hook](https://reactjs.org/docs/hooks-reference.html#usecontext) to 
-share a user's input form data, i.e., application "state", across components. 
+share a user's input form data, i.e., application "state", across components.
+
+All form input whether requiring text input, a checkbox, or a select is auto-generated from the
+initial state of the context WizardContext.js.
 
 <img src="./public/Screenshot.png" width="50%">.
 ___
