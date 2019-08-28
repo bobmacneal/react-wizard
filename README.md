@@ -1,10 +1,9 @@
 
 # react-wizard 
 
-This is an example for implementing a step-by-step _wizard_ using [React](https://reactjs.org/). 
-
-I demonstrate an easy-to-understand template for setting up a wizard using React's useState hook.
-
+This is a step-by-step _wizard_ application using [React](https://reactjs.org/) that demonstrates 
+using React's [useContext hook](https://reactjs.org/docs/hooks-reference.html#usecontext) to 
+share a user's input form data, i.e., application "state", across components. 
 
 <img src="./public/Screenshot.png" width="50%">.
 ___
@@ -24,24 +23,27 @@ ___
 
 ### Additional Info
 
-Beyond bootstrapping react-wizard with [Create React App](https://github.com/facebook/create-react-app), 
-I added the following npm packages:
+Beyond bootstrapping react-wizard with the standard [Create React App](https://github.com/facebook/create-react-app), 
+the following npm packages were added:
 
-- [node-sass](https://www.npmjs.com/package/node-sass) for styling ease.
-
-    `yarn add node-sass` 
-
-- [prop-types](https://www.npmjs.com/package/prop-types) for runtime type checking. 
+- [prop-types](https://www.npmjs.com/package/prop-types) to provide runtime type checking. 
 
     `yarn add prop-types` 
 
 
-- [styled-components](https://www.npmjs.com/package/styled-components) to make it obvious where a component's styling 
-comes from. 
+- [styled-components](https://www.npmjs.com/package/styled-components) to embed CSS styles within 
+components, making the component's styling quicker/easier to locate.
 
     `yarn add styled-components` 
-    
+
 - [babel-plugin-styled-components](https://www.npmjs.com/package/babel-plugin-styled-components) so Babel knows
-how to transpile css in styled-components. 
+how to transpile CSS in the [styled-components](https://www.npmjs.com/package/styled-components). 
 
     `yarn add babel-plugin-styled-components` 
+
+- [node-sass](https://www.npmjs.com/package/node-sass) for styling advantages like variables and 
+simple inheritance via extension.
+
+    `yarn add node-sass` 
+
+    

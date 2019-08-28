@@ -1,7 +1,19 @@
 {
   "name": "wizard",
   "version": "0.1.0",
-  "private": true,
+  "description": "Step-by-step wizard application that demonstrates React's useContext hook",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "hooks",
+    "useContext",
+    "wizard"
+  ],
+  "author": "Bob MacNeal <bob.macneal@workingcompany.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobmacneal/react-wizard"
+  },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "lodash.template": "4.5.0",
