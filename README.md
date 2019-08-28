@@ -1,12 +1,12 @@
 
 # react-wizard 
 
-This is a step-by-step _wizard_ application written in JavaScript with [React](https://reactjs.org/) that demonstrates 
-using the [useContext hook](https://reactjs.org/docs/hooks-reference.html#usecontext) to 
-share a user's input form data, i.e., application "state", across components.
+**react-wizard** is a step-by-step _wizard_ application written in JavaScript with [React](https://reactjs.org/).
+It demonstrates an implementation of the [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) hook to 
+share a user's form input, i.e., the application's "state", across components.
 
-All form input, whether calling for text input, a checkbox, or a select, is auto-generated from the
-initial state of the context in _WizardContext.js_.
+All form input in this application, whether text input, checkbox, or select, is auto-generated from the initial 
+state of the context in WizardContext.js.
 
 ___
 <img src="./public/Screenshot.png" width="50%">.
