@@ -17,7 +17,7 @@ ___
 1. Clone the repository 
     `$ git clone https://github.com/bobmacneal/react-wizard.git`
 2. Install [Yarn](https://yarnpkg.com) for package management. 
-3. Install node dependencies using yarn
+3. Install dependencies using yarn
     `$ yarn`
 
 ### Run
@@ -27,7 +27,7 @@ ___
 
 ### Additional Info
 
-Beyond bootstrapping react-wizard with the standard [Create React App](https://github.com/facebook/create-react-app), 
+Beyond bootstrapping with [Create React App](https://github.com/facebook/create-react-app), 
 the following npm packages were added:
 
 - [prop-types](https://www.npmjs.com/package/prop-types) to provide runtime type checking. 
@@ -36,16 +36,16 @@ the following npm packages were added:
 
 
 - [styled-components](https://www.npmjs.com/package/styled-components) to embed CSS styles within 
-components, making the component's styling quicker/easier to locate.
+components which makes the component's styling quicker/easier to find and update.
 
     `yarn add styled-components` 
 
 - [babel-plugin-styled-components](https://www.npmjs.com/package/babel-plugin-styled-components) so Babel knows
-how to transpile CSS in the [styled-components](https://www.npmjs.com/package/styled-components). 
+how to transpile CSS in the [styled-components](https://www.npmjs.com/package/styled-components) mentioned above. 
 
     `yarn add babel-plugin-styled-components` 
 
-- [node-sass](https://www.npmjs.com/package/node-sass) for styling advantages like variables and 
+- [node-sass](https://www.npmjs.com/package/node-sass) for styling advantages over vanilla CSS, like variables and 
 simple inheritance via extension.
 
     `yarn add node-sass` 
