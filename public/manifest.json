@@ -1,6 +1,6 @@
 {
-  "short_name": "Wizard",
-  "name": "Wizard Sample",
+  "short_name": "wizard",
+  "name": "react-wizard",
   "icons": [
     {
       "src": "favicon.ico",
