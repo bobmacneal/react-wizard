@@ -4,7 +4,7 @@ import RouteWithLayout from './RouteWithLayout';
 import Layout from './components/Layout'
 import Home from './Home'
 import NotFound from './NotFound'
-import WizardForm from './components/WizardForm'
+import Wizard from './components/Wizard'
 
 const Routes = () => {
   return (
@@ -16,7 +16,7 @@ const Routes = () => {
         path="/"
       />
       <RouteWithLayout
-        component={WizardForm}
+        component={Wizard}
         layout={Layout}
         exact
         path='/wizard'

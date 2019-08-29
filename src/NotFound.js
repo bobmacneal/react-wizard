@@ -8,7 +8,7 @@ const NotFound = () => {
         Route is not supported.
       </p>
       <p>
-        Click <a href='/wizard'>Wizard</a> to try demo.
+        Click <a href='/wizard'>react-wizard</a> to try demo.
       </p>
     </Fragment>
   );
