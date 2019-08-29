@@ -6,9 +6,9 @@ import styled from 'styled-components'
 import {WizardProvider} from "./WizardContext";
 
 const H2 = styled.h2`
-  margin-left: 10px;
+  margin-left: 12px;
 `
-const WizardForm = () => {
+const Wizard = () => {
   return (
     <WizardProvider>
       <H2>Wizard</H2>
@@ -19,4 +19,4 @@ const WizardForm = () => {
   )
 }
 
-export default WizardForm
+export default Wizard
