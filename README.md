@@ -29,6 +29,8 @@ ___
 
 ### Additional Info
 
+The post [Understanding React useContext](https://workingcompany.com/2019/08/29/understanding-react-usecontext/) outlines the motivation behind react-wizard and describes key implementation details.  
+
 Beyond bootstrapping with [Create React App](https://github.com/facebook/create-react-app), 
 the following npm packages were added:
 
